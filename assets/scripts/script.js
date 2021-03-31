@@ -46,14 +46,3 @@ saveEl.append(saveFormEl);
 saveFormEl.append(saveButtonEl);
 saveButtonEl.append(saveIconEl);
 
-
-
-
-
-
-
-
-/*var main = document.querySelector("main");
-var rowEl = document.createElement("div");
-rowEl.setAttribute("class", "row time-block");
-rowEl.appendChild(main);*/

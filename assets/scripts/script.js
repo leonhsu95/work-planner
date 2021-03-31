@@ -1,7 +1,9 @@
 // Display Current Time
+var currentTime = moment();
 var currentDay = moment().format("dddd, Do MMMM");
 var currentDayEl = $('#current-day');
 currentDayEl.text("Today is " + currentDay);
+
 
 
 // Timeblock Elements
@@ -10,39 +12,60 @@ var rowEl = $("<div>");
 rowEl.attr("class","row time-block");
 main.append(rowEl);
 
-var hourEl = $("<div>");
-hourEl.attr("class","col-3 col-sm-2 col-lg-1 scheduler-hour hour");
-hourEl.text("9am");
-rowEl.append(hourEl);
 
-var schedulerPlannerEl = $("<div>");
-var textAreaEl = $("<textarea>");
 
-schedulerPlannerEl.attr("class","col-6 col-sm-8 col-lg-10 scheduler-planner");
-textAreaEl.attr({
-                    "class":"mt-10 scheduler-input", 
-                    "cols":"5",
-                    "rows":"3"
-                });
-rowEl.append(schedulerPlannerEl);
-schedulerPlannerEl.append(textAreaEl);
+// Creating Timeblocks Dynamically
+for (let i = 0; i < 9; i++) {
+        var dayHour = moment().startOf("day").add(i+9,"h");
 
-var saveEl= $("<div>");
-var saveFormEl = $("<form>");
-var saveButtonEl = $("<button>");
-var saveIconEl =  $("<i>");
+        var hourEl = $("<div>");
+        hourEl.attr("class","col-3 col-sm-2 col-lg-1 scheduler-hour hour");
+        hourEl.text(dayHour.format("hA"));
+        rowEl.append(hourEl);
+        
+        var schedulerPlannerEl = $("<div>");
+        var textAreaEl = $("<textarea>");
+        
+        schedulerPlannerEl.attr("class","col-6 col-sm-8 col-lg-10 scheduler-planner");
+        textAreaEl.attr({
+                            "class":"scheduler-input", 
+                            "cols":"5",
+                            "rows":"3"
+                        });
 
-saveEl.attr("class","col-6 col-sm-2 col-lg-1 save-button");
-saveFormEl.attr("class","save-form");
-saveButtonEl.attr({
-                    "class":"save", 
-                    "type": "submit"
-                });
+        // Changing Colour based on Hour Passed
+        if (moment(dayHour).isBefore(currentTime, "hour")){
+            textAreaEl.addClass('past');
+        }
 
-saveIconEl.attr("class","fas fa-save");
+        else if(moment(dayHour).isSame(currentTime, "hour")){
+            textAreaEl.addClass('present');
+        }
 
-rowEl.append(saveEl);
-saveEl.append(saveFormEl);
-saveFormEl.append(saveButtonEl);
-saveButtonEl.append(saveIconEl);
+        else{
+            textAreaEl.addClass('future');
+        }
 
+        rowEl.append(schedulerPlannerEl);
+        schedulerPlannerEl.append(textAreaEl);
+        
+        var saveEl= $("<div>");
+        var saveFormEl = $("<form>");
+        var saveButtonEl = $("<button>");
+        var saveIconEl =  $("<i>");
+        
+        saveEl.attr("class","col-6 col-sm-2 col-lg-1 save-button");
+        saveFormEl.attr("class","save-form");
+        saveButtonEl.attr({
+                            "class":"save", 
+                            "type": "submit"
+                        });
+        
+        saveIconEl.attr("class","fas fa-save");
+        
+        rowEl.append(saveEl);
+        saveEl.append(saveFormEl);
+        saveFormEl.append(saveButtonEl);
+        saveButtonEl.append(saveIconEl);
+        
+}

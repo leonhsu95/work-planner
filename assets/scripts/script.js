@@ -3,6 +3,7 @@ var currentDay = moment().format("dddd, Do MMMM");
 var currentDayEl = $('#current-day');
 currentDayEl.text("Today is " + currentDay);
 
+
 // Timeblock Elements
 var main = $("#main");
 var rowEl = $("<div>");
@@ -10,21 +11,21 @@ rowEl.attr("class","row time-block");
 main.append(rowEl);
 
 var hourEl = $("<div>");
-hourEl.attr("class","col-3 col-sm-2 col-lg-1 schedule-hour");
+hourEl.attr("class","col-3 col-sm-2 col-lg-1 scheduler-hour hour");
 hourEl.text("9am");
 rowEl.append(hourEl);
 
-var schedulePlannerEl = $("<div>");
+var schedulerPlannerEl = $("<div>");
 var textAreaEl = $("<textarea>");
 
-schedulePlannerEl.attr("class","col-6 col-sm-8 col-lg-10 description schedule-planner");
+schedulerPlannerEl.attr("class","col-6 col-sm-8 col-lg-10 scheduler-planner");
 textAreaEl.attr({
-                    "class":"mt-10", 
+                    "class":"mt-10 scheduler-input", 
                     "cols":"5",
                     "rows":"3"
                 });
-rowEl.append(schedulePlannerEl);
-schedulePlannerEl.append(textAreaEl);
+rowEl.append(schedulerPlannerEl);
+schedulerPlannerEl.append(textAreaEl);
 
 var saveEl= $("<div>");
 var saveFormEl = $("<form>");

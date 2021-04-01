@@ -86,7 +86,16 @@ for (let i = 0; i < 9; i++) {
 $(".save-button-handler").on("click", function(event){
     event.preventDefault();
     event.stopPropagation();
-    console.log($(this).attr("hour"));
-    console.log($("#" + $(this).attr("hour")).val())
+    
+    var hour= $(this).attr("hour");
+    var userEvent= $("#" + $(this).attr("hour")).val();
+
+    localStorage.setItem(hour, JSON.stringify(userEvent));
+
+    var savedEvent = localStorage.getItem("9");
+    $("#" + $(this).attr("hour").val(savedEvent));
+
+    // console.log(hour);
+    console.log(savedEvent);
 
 })

@@ -95,7 +95,7 @@ function saveHour (hour) {
             return null;
         }
     }
-     localStorage.setItem("#scheduler-input", JSON.stringify(events));
+     localStorage.setItem("#textarea[id^='scheduler-input", JSON.stringify(events));
 }
 
 

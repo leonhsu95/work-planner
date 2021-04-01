@@ -92,10 +92,13 @@ $(".save-button-handler").on("click", function(event){
 
     localStorage.setItem(hour, JSON.stringify(userEvent));
 
-    var savedEvent = localStorage.getItem("9");
-    $("#" + $(this).attr("hour").val(savedEvent));
+    for (i = 0; i < 9; i++) {
 
-    // console.log(hour);
+    var savedEvent = JSON.parse(localStorage.getItem(userEvent));
+    //$("#" + $(this).attr("hour").val(savedEvent));
     console.log(savedEvent);
+    }
+    // console.log(hour);
+  
 
 })

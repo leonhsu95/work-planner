@@ -92,6 +92,8 @@ $(".save-button-handler").on("click", function(event){
 
     localStorage.setItem(hour, JSON.stringify(userEvent));
 
+    // Saving textarea Input when website reloads
+
     for (i = 9; i < 18; i++) {
         var savedEvent = JSON.parse(localStorage.getItem(i));
         // userEvent.attr("value",savedEvent);

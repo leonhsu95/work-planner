@@ -56,8 +56,9 @@ for (let i = 0; i < 9; i++) {
         saveEl.attr("class","col-6 col-sm-2 col-lg-1 save-button");
         saveFormEl.attr("class","save-form");
         saveButtonEl.attr({
-                            "class":"save-button", 
-                            "type": "submit"
+                            "class":"save-button-handler save-button", 
+                            "type": "submit",
+                            "hour": hour.format("H"),
                         });
         
         saveIconEl.attr("class","fas fa-save");
@@ -69,21 +70,23 @@ for (let i = 0; i < 9; i++) {
 }
 
 
-function saveHour() {
-    var hour = $('.scheduler-input').map(function(){
-        return $(this).attr('id');
-    })
+// function saveHour() {
+//     var hour =
+//         return $(this).attr('id');
+//     })
     
-    var event = $('.scheduler-input').val()
-    console.log(event);
-    //localStorage.setItem(hour)
-}
+//     var event = $('.scheduler-input').val()
+//     console.log(event);
+//     localStorage.setItem(hour)
+// }
 
 
 
 // Save Button Click Event
-$(".save-button").on("click", function(event){
+$(".save-button-handler").on("click", function(event){
     event.preventDefault();
     event.stopPropagation();
-    saveHour();
+    console.log($(this).attr("hour"));
+    console.log($("#" + $(this).attr("hour")).val())
+
 })

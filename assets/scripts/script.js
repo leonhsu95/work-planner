@@ -25,7 +25,7 @@ for (let i = 0; i < 9; i++) {
         
         schedulerPlannerEl.attr("class","col-6 col-sm-8 col-lg-10 scheduler-planner");
         textAreaEl.attr({
-                            "id": "scheduler-input"+hour.format("H"),
+                            "id": hour.format("H"),
                             "class":"scheduler-input", 
                             "cols":"5",
                             "rows":"3"
@@ -68,34 +68,15 @@ for (let i = 0; i < 9; i++) {
         saveButtonEl.append(saveIconEl);
 }
 
-// Saving Text Area Content in Object Arrays
-var events = {
-    hours: [],
-    items: [],
-}
 
-
-function saveHour (hour) {
-    var hourItem = $("#textarea[id^='scheduler-input']").val();
-    var index = events.hours.indexOf(hour);    
+function saveHour() {
+    var hour = $('.scheduler-input').map(function(){
+        return $(this).attr('id');
+    })
     
-    if (hourItem !== ""){
-        // Adding new events in textarea
-        if (index === -1) {
-            events.hours.push(hour);
-            events.items.push(hourItem);
-        }
-        // No edits or change in textarea
-        else if (hourItem === events.items[index]) {
-            return null;
-        }
-       
-        // If no event item, no action
-        else {
-            return null;
-        }
-    }
-     localStorage.setItem("#textarea[id^='scheduler-input", JSON.stringify(events));
+    var event = $('.scheduler-input').val()
+    console.log(event);
+    //localStorage.setItem(hour)
 }
 
 
@@ -104,5 +85,5 @@ function saveHour (hour) {
 $(".save-button").on("click", function(event){
     event.preventDefault();
     event.stopPropagation();
-    saveHour(hour);
+    saveHour();
 })

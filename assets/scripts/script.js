@@ -76,7 +76,7 @@ var events = {
 
 
 function saveHour (hour) {
-    var hourItem = hour;
+    var hourItem = $("#textarea[id^='scheduler-input']").val();
     var index = events.hours.indexOf(hour);    
     
     if (hourItem !== ""){

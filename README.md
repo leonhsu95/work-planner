@@ -29,8 +29,8 @@ git clone git@github.com:leonhsu95/work-planner.git"
 This landing page is a mockup and can be used and tested freely. If testing, please save a copy of the original files and edit on the copied file.
 The website mockup should look like this:
 
- ![Work Planner Default](assets/screenshots/screenshot.png)
- ![Work Planner Saving User Input](assets/screenshots/screenshot2.png)
+ ![Work Planner Default](assets/screenshots/demo1.png)
+ ![Work Planner Saving User Input](assets/screenshots/demo2.png)
 
 ## Credits
 

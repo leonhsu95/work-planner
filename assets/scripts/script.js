@@ -91,17 +91,20 @@ $(".save-button-handler").on("click", function(event){
     var userEvent= $("#" + $(this).attr("hour")).val();
 
     localStorage.setItem(hour, JSON.stringify(userEvent));
+})
 
-    // Saving textarea Input when website reloads
+ // Saving textarea Input when website reloads
 
+function retrieveData(){
     for (i = 9; i < 18; i++) {
         var savedEvent = JSON.parse(localStorage.getItem(i));
-        // userEvent.attr("value",savedEvent);
+        //userEvent[i].text(savedEvent);
+        //console.log(savedEvent);
 
+        $("#"+i).val(savedEvent);
       
-    console.log(savedEvent);
+        //console.log(userEvent);
     }
-    // console.log(hour);
-  
+}
 
-})
+retrieveData();

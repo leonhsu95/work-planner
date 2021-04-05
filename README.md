@@ -1,6 +1,6 @@
-# <Work Planner>
+# Work Planner
 
-Please view the Password Generator Project Here: [Work Planner](https://leonhsu95.github.io/work-planner/)
+Please view the Work Planner Here: [Work Planner](https://leonhsu95.github.io/work-planner/)
 
 ## Description
 

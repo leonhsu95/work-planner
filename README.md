@@ -2,16 +2,29 @@
 
 Please view the Work Planner Here: [Work Planner](https://leonhsu95.github.io/work-planner/)
 
-## Description
+# <Work Planner>
 
-This project requires us to create a work planner where it shows and keep user inputs to help the user plan their workday activities.
+Please view the Password Generator Project Here: [Work Planner](https://leonhsu95.github.io/work-planner/)
 
 ## Table of Contents
 
 - [Installation](#installation)
+- [Description](#description)
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
+
+## Description
+
+This project requires us to create a work planner where it shows and keep user inputs to help the user plan their workday activities.
+
+## Technologies
+
+Technologies used in this portfolio include:
+ * HTML
+ * CSS
+ * Bootstrap
+ * JS and Moment.js cdn for datetime
 
 ## Installation
 

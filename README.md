@@ -8,9 +8,9 @@ Please view the Password Generator Project Here: [Work Planner](https://leonhsu9
 
 ## Table of Contents
 
-- [Installation](#installation)
 - [Description](#description)
 - [Usage](#usage)
+- [Installation](#installation)
 - [Credits](#credits)
 - [License](#license)
 
